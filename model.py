@@ -19,9 +19,11 @@ def makefilter():
     # When looking at the data we see a linear boundary line hence the choice
     model = svm.SVC(kernel='linear')
     model.fit(message_train,label_train)
+    if __name__ == "__main__":
+        print(model.score(message_test,label_test))
+        # Average  97% +-1% 
 
     return model
 
 if __name__ == "__main__":
-    print(model.score(message_test,label_test))
-    # Average  97% +-1% 
+    makefilter()
